@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,https://lottiefiles.com/free-animation/fire-1IefLpQ5wa initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Fire Glory</title>
+</head>
+<body>
+    <!-- We create three layers that stack on top of each other -->
+     <!-- The first layer marks the start -->
+    <section class="intro">
+        <h1>Enter the Field</h1>
+    </section>
+    <!-- The middle layer is the section we will interact with  -->
+    <section class="spotlight">
+        <!-- This will store our little fire lottie file centered on screen -->
+        <div class="lottie-container">
+            <!-- This is where we will mount the file -->
+            <div class="lottie">
+
+            </div>
+            <!-- This will give soft ambient glown around the fire -->
+            <div class="fire-glow">
+
+            </div>
+        </div>
+
+            <h1>Guided by Interaction</h1>
+
+            <p>
+                It is better to fail in originality than to succeed in imitation.
+                Nothing in the world can take the place of persistence. Talent will not; nothing is more common than unsuccessful men with talent. Genius will not; unrewarded genius is almost a proverb. Education will not; the world is full of educated derelicts. The slogan ’Press On’ has solved and always will solve the problems of the human race
+                It is remarkable how much long-term advantage people like us have gotten by trying to be consistently not stupid instead of trying to be very intelligent.
+                Do not stop thinking of life as an adventure. You have no security unless you can live bravely, excitingly, imaginatively; unless you can choose a challenge instead of competence.
+            </p>
+
+            <!-- This is where the actual spotlight effect will come into play, dimming everything around it -->
+            <div class="spotlight-mask"></div>
+    </section> 
+    <!-- The last layer marks the end -->
+    <section class="outro">
+        <h1>The Interaction Ends</h1>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.umd.min.js"></script>
+    <script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    smooth: true,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+  })
+
+  function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
+
+  requestAnimationFrame(raf)
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.13.0/lottie.min.js" integrity="sha512-uOtp2vx2X/5+tLBEf5UoQyqwAkFZJBM5XwGa7BfXDnWR+wdpRvlSVzaIVcRe3tGNsStu6UMDCeXKEnr4IBT8gA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  const animation = lottie.loadAnimation({
+    container: document.querySelector('.lottie'),
+    renderer: 'svg', // svg | canvas | html
+    loop: true,
+    autoplay: true,
+    path: "./assets/fire.json", // path to your lottie JSON file
+  });
+</script>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
