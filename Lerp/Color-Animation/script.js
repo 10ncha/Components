@@ -7,19 +7,32 @@ const lerp = (start, end, t) => {
     return start + (end - start) * t;
 }
 
+const clamp = (current, minimum, maximum) => {
+    if(current > maximum){
+        return maximum;
+    }
+    else if(current < minimum){
+        return minimum;
+    }
+    else {
+        return current;
+    }
+}
+
 window.addEventListener('scroll', () => {
     // 3. Calculate 't' (0 to 1) based on scroll position
     const scrollTop = window.scrollY;
     const maxScroll = document.body.scrollHeight - window.innerHeight;
 
     // This ensures t is always between 0 to 1
-    const t = Math.min(Math.max(scrollTop / maxScroll, 0), 1);
+    // const t = Math.min(Math.max(scrollTop / maxScroll, 0), 1);
+    const t = clamp(scrollTop / maxScroll, 0, 1);
 
 
     // 4. Calculate the new RGB values using lerp
-    const r = Math.round(lerp(startColor.r, endColor.r, t))
-    const g = Math.round(lerp(startColor.g, endColor.g, t))
-    const b = Math.round(lerp(startColor.b, endColor.b, t))
+    const r = (lerp(startColor.r, endColor.r, t))
+    const g = (lerp(startColor.g, endColor.g, t))
+    const b = (lerp(startColor.b, endColor.b, t))
 
     const newColor = `rgb(${r}, ${g}, ${b})`;
     document.body.style.backgroundColor = newColor;
