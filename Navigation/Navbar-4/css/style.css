@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Zalando Sans Expanded", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+header {
+    position: fixed;
+    bottom: 20px;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar {
+    height: inherit;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.list-items > li {
+    padding: 10px;
+    border-radius: 10px;
+    list-style: none;
+}
+
+.list-items {
+    height: inherit;
+    width: inherit;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #141414;
+    font-weight: 600;
+    border-radius: 17px;
+}
+
+.list-items li:hover {
+    /* background-color: #1FEA00; */
+    /* color: #1FEA00; */
+    transition: all 200ms ease-in;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-weight: 900;
+    font-size: 4rem;
+    color: white;
+}
+
+.a {
+    background-color: red;
+}
+
+.b {
+    background-color:chocolate;
+}
+
+.c {
+    background-color:crimson;
+}
+
+.d {
+    background-color: brown;
+}
+
+.selected {
+  background-color: #1FEA00;
+  color: #141414;
+  transition: all 200ms ease-in;
+}
+
+
+
+
+
+
+ 
